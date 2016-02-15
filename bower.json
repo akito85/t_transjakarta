@@ -7,7 +7,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "3.3.6"
+    "bootstrap-sass": "3.3.6",
+    "font-awesome": "^4.5.0",
+    "uikit": "^2.24.3",
+    "Yamm3": "yamm3#^1.1.0"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -31,6 +34,15 @@
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff",
         "./assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
-    }
+    },
+    "uikit" : { 
+      "main" : [
+          "./scss/uikit-mixins.scss",
+          "./scss/ukkit-variables.scss",
+          "./scss/uikit.scss",
+          "./scss/components/slidshow.scss",
+          "./scss/components/slidenav.scss"
+        ]
+      }
   }
 }
