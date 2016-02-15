@@ -38,7 +38,6 @@
     "uikit" : { 
       "main" : [
           "./scss/uikit-mixins.scss",
-          "./scss/ukkit-variables.scss",
           "./scss/uikit.scss",
           "./scss/components/slidshow.scss",
           "./scss/components/slidenav.scss"
