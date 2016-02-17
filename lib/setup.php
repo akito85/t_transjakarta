@@ -96,12 +96,18 @@ function display_sidebar() {
  */
 function assets() {
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
+  wp_enqueue_style('yamm/css', Assets\asset_path('styles/yamm.css'), false, null);
+  wp_enqueue_style('uikit/css', Assets\asset_path('styles/uikit.css'), false, null);
   wp_enqueue_style('noxus/css', Assets\asset_path('styles/style.css'), false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_enqueue_script('jquery/js', Assets\asset_path('scripts/jquery.js'), null, true);
+  wp_enqueue_script('bootstrap/js', Assets\asset_path('scripts/bootstrap.js'), null, true);
+  wp_enqueue_script('uikit/js', Assets\asset_path('scripts/uikit.js'), null, true); 
+  wp_enqueue_script('uikit-slideshow/js', Assets\asset_path('scripts/slideshow.js'), null, true); 
+  wp_enqueue_script('uikit-slideshow-fx/js', Assets\asset_path('scripts/slideshow-fx.js'), null, true); 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
