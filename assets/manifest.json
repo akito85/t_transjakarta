@@ -1,15 +1,8 @@
 {
   "dependencies": {
-    "main.js": {
-      "files": [
-        "scripts/main.js"
-      ],
-      "main": true
-    },
     "main.css": {
       "files": [
-        "styles/main.scss",
-        "styles/style.css"
+        "styles/main.scss"
       ],
       "main": true
     },
@@ -24,8 +17,36 @@
         "scripts/customizer.js"
       ]
     },
+    "slideshow.js": {
+      "files": [
+        "scripts/slideshow.js"
+      ]
+    },
+    "slideshow-fx.js": {
+      "files": [
+        "scripts/slideshow-fx.js"
+      ]
+    },        
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "yamm.css": {
+      "bower": ["Yamm3"]
+    },
+    "uikit.css": {
+      "files": [
+        "styles/uikit.scss"
+      ] 
+    },
+    "bootstrap.js": {
+      "bower": [
+        "bootstrap-sass"
+      ] 
+    },
+    "uikit.js": {
+      "bower": [
+        "uikit"
+      ] 
     }
   },
   "config": {
