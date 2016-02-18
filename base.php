@@ -18,22 +18,24 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap container" role="document">
-      <div class="content row">
-        <main class="main">
+    <div id="wrapper" role="document">
+      <div id="page-content-wrapper">
+        <div class="container-fluid xyz">
           <?php include Wrapper\template_path(); ?>
-        </main><!-- /.main -->
+        </div><!-- /.main -->
+
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
+
       </div><!-- /.content -->
+      <?php
+        do_action('get_footer');
+        get_template_part('templates/footer');
+        wp_footer();
+      ?>
     </div><!-- /.wrap -->
-    <?php
-      do_action('get_footer');
-      get_template_part('templates/footer');
-      wp_footer();
-    ?>
   </body>
 </html>
