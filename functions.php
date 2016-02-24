@@ -54,7 +54,10 @@ class Menu_With_Description extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
     $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
     $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
-    $attributes .= $item->ID == 22 ? 'data-toggle="dropdown" class="dropdown-toggle"' : ''; 
+    $attributes .= $item->ID == 22 ? 'data-toggle="dropdown" class="dropdown-toggle"' : '';
+    $attributes .= $item->ID == 23 ? 'data-toggle="dropdown" class="dropdown-toggle"' : '';
+    //$attributes .= $item->ID == 115 ? 'data-toggle="dropdown" class="dropdown-toggle"' : '';
+     
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
