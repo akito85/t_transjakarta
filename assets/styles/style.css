@@ -161,6 +161,10 @@ body {
     color: #cccbcb !important;
 }
 
+.mm-list a:hover, a:visited, a:focus {
+    outline: none;
+}
+
 .mm-sub {
     margin-bottom: 4px;
 }
