@@ -1,0 +1,9 @@
+#wp-admin-bar-wp-logo,
+#wpfooter,
+#wp-version-message,
+#dashboard_primary,
+.welcome-panel-content h2,
+.welcome-panel-content p
+{ 
+	display: none !important; 
+}

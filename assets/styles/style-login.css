@@ -1,0 +1,8 @@
+.login h1 a {
+	background-image: url(../images/logo-tj-1.png);
+	background-image: none, url(../images/logo-tj-1.png);
+	-webkit-background-size: 315px;
+	background-size: 315px;
+	width: 320px;
+	height: 60px;
+}
