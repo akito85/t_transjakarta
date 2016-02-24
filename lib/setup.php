@@ -108,6 +108,7 @@ function assets() {
   wp_enqueue_script('bootstrap/js', Assets\asset_path('scripts/bootstrap.js'), null, true);
   wp_enqueue_script('uikit/js', Assets\asset_path('scripts/uikit.js'), null, true); 
   wp_enqueue_script('uikit-slideshow/js', Assets\asset_path('scripts/slideshow.js'), null, true); 
-  wp_enqueue_script('uikit-slideshow-fx/js', Assets\asset_path('scripts/slideshow-fx.js'), null, true); 
+  wp_enqueue_script('uikit-slideshow-fx/js', Assets\asset_path('scripts/slideshow-fx.js'), null, true);
+  wp_enqueue_script('noxus/js', Assets\asset_path('scripts/main.js'), null, true); 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
