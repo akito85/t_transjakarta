@@ -94,7 +94,7 @@ body {
 .navbar .container-fluid {
     padding-left: 40px;
     padding-right: 40px;
-    height: 55px;
+    height: 65px;
 }
 
 .navbar-header {
@@ -294,7 +294,6 @@ body {
     background: url(../images/db-small.png);
     background-repeat: repeat-x;
     height: 10px;
-    margin-top: 10px;
 }
 
 #wrapper {
