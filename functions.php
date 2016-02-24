@@ -27,8 +27,16 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
-
+// Nav Menu
 class Menu_With_Description extends Walker_Nav_Menu {
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+  }
+  function end_lvl(&$output, $depth = 0, $args = array()) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "$indent</ul>\n";
+  }
   function start_el(&$output, $item, $depth, $args) {
     global $wp_query;
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -46,14 +54,34 @@ class Menu_With_Description extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
     $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
     $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+    $attributes .= $item->ID == 22 ? 'data-toggle="dropdown" class="dropdown-toggle"' : ''; 
 
     $item_output = $args->before;
     $item_output .= '<a'. $attributes .'>';
     $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-    $item_output .= '<br /><span class="sub">' . $item->description . '</span>';
+    $item_output .= '<br /><span class="sub mm-desc">' . $item->description . '</span>';
     $item_output .= '</a>';
     $item_output .= $args->after;
 
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
   }
+
+  function end_el( &$output, $item, $depth = 0, $args = array() ) {
+    $output .= "</li>\n";
+  }
 }
+
+// Removing Auto <p>
+remove_filter ('the_content', 'wpautop');
+
+// Override Login Style
+function noxus_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/dist/styles/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'noxus_login_stylesheet' );
+
+// Override Admin Style
+function noxus_admin_stylesheet() {
+    wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/dist/styles/style-admin.css' );
+}
+add_action('admin_enqueue_scripts', 'noxus_admin_stylesheet');
