@@ -1,16 +1,29 @@
 {
   "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ]
+    },
     "main.css": {
       "files": [
         "styles/main.scss"
-      ],
-      "main": true
+      ]
     },
     "style.css": {
       "files": [
         "styles/style.css"
-      ],
-      "main": true
+      ]
+    }, 
+    "style-login.css": {
+      "files": [
+        "styles/style-login.css"
+      ]
+    },  
+    "style-admin.css": {
+      "files": [
+        "styles/style-admin.css"
+      ]
     },    
     "customizer.js": {
       "files": [
