@@ -43,6 +43,9 @@
     #twitter-widget-0 {
         margin-left: 0px !important;
     }
+    #navbar-search { 
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -53,6 +56,9 @@
     .uk-dotnav * * {
         width: 10px !important;
         height: 10px !important;
+    }
+    #navbar-search { 
+        display: none !important;
     }
 }
 
@@ -88,6 +94,7 @@ body {
 .navbar .container-fluid {
     padding-left: 40px;
     padding-right: 40px;
+    height: 55px;
 }
 
 .navbar-header {
@@ -108,7 +115,8 @@ body {
 }
 
 #nav-header {
-    margin-top: 6px;
+    height: 100%;
+    padding: 8px 8px 0 8px;
 }
 
 #nav-header li a {
@@ -121,7 +129,7 @@ body {
 }
 
 .navbar-nav li .dropdown-menu {
-    background-image: url(../img/bg-mega-menu.png);
+    background-image: url(../images/bg-mega-menu.png);
     background-size: cover;
     background-repeat: repeat;
     margin-top: -10px;
@@ -136,11 +144,10 @@ body {
     margin-bottom: 8px;
     margin-top: 10px;
     float: left;
+    white-space: normal;
 }
 
 .mm-list {
-    margin-left: 20px;
-    margin-right: 20px;
     float: left;
 }
 
@@ -162,27 +169,38 @@ body {
     color: #cccbcb;
     font: 14px Roboto Light;
     text-transform: none;
-}
-
-.fa-search {
-    font-size: 14px;
-    margin-top: 4px;
-    padding-left: 9px;
+    white-space: normal;
 }
 
 #navbar-search {
-    max-width: 160px;
+    float: right;
+    display: inline-block;
+    height: 100%;
+    padding: 19px 3px;
+}
+
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    text-align: center;
+    pointer-events: none;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .search-form .form-group {
     background-color: #ffffff;
     width: 26px;
     height: 26px;
-    margin-bottom: 0px;
-    margin-left: 8px;
-    margin-top: 12px;
+    margin: 0;
     border: 1px solid #ccc;
-    border-radius: 25px;
+    border-radius: 25px !important; /** bug fixed **/
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     float: right !important;
     transition: all 0.35s ease, border-radius 0s;
@@ -193,7 +211,6 @@ body {
 
 .search-form .form-group.showClass {
     width: 100%;
-    border-radius: 4px 25px 25px 4px;
 }
 
 .search-form .form-group input.form-control {
@@ -204,6 +221,7 @@ body {
     border: 0 none;
     box-shadow: none;
     display: block;
+    width: 100%;
 }
 
 .search-form .form-group input.form-control::-webkit-input-placeholder {
@@ -269,7 +287,7 @@ body {
 }
 
 #header-bottom {
-    background: url(../img/db-small.png);
+    background: url(../images/db-small.png);
     background-repeat: repeat-x;
     height: 10px;
     margin-top: 10px;
@@ -288,7 +306,7 @@ body {
 }
 
 #sidebar-wrapper {
-    background-image: url(../img/bg-mega-menu.png);
+    background-image: url(../images/bg-mega-menu.png);
     background-size: cover;
     background-repeat: repeat;
     width: 0;
@@ -412,25 +430,26 @@ footer {
     margin-right: 5px;
 }
 
-#nav-footer li {
+#nav-footer a {
     display: inline-block;
-}
-
-#nav-footer li a {
     color: #666666;
     font: 14px Roboto Medium;
     padding: 10px;
 }
 
+#nav-footer a:hover {
+    text-decoration: none;
+}
+
 #footer-top {
-    background: url(../img/db-small.png);
+    background: url(../images/db-small.png);
     background-repeat: repeat-x;
     height: 10px;
     margin: 0px;
 }
 
 #footer-bottom {
-    background: url(../img/db-medium.png);
+    background: url(../images/db-medium.png);
     background-repeat: repeat-x;
     height: 30px;
     color: #ffffff;
@@ -448,7 +467,8 @@ footer {
     background: #f3f3f3;
     font: 14px Roboto;
     width: 90%;
-    padding: 0px;
+    display: table;
+    margin: 0 auto;
 }
 
 fieldset {
@@ -521,14 +541,25 @@ input {
 }
 
 .news-card {
-    padding: 4px;
+    padding: 0;
+    min-height: 444px;   
 }
 
 .card {
-    background: #ffffff;
+    background: #fff;
     min-height: 260px;
-    margin-bottom: 10px;
+    float: left;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0;
+    margin: 11px auto;
 }
+
+.card:hover, .card:visited, .card:focus {
+    text-decoration: none;
+    outline: none;
+}
+
 
 .card-image img {
     min-height: 142px;
@@ -568,4 +599,86 @@ input {
     max-width: 300px !important;
     height: 400px !important;
     margin-left: 40px;
+}
+
+
+/** overrides **/
+.yamm .dropdown.yamm-fw .sub-menu {
+    left: 0;
+    right: 0;
+}
+.navbar-nav li .sub-menu {
+    background-image: url(../images/bg-mega-menu.png);
+    background-size: cover;
+    background-repeat: repeat;
+    margin-top: -10px;
+    padding-bottom: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 0px;
+}
+.navbar-nav>li>.sub-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.yamm .sub-menu {
+    left: auto;
+}
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.dropdown-menu > li > a {
+    padding: 0 27px;
+    position: relative;
+    top: -3px;
+}
+
+.dropdown-menu > li {
+    background: url(../images/icon-tj-white.png) no-repeat;
+}
+
+.navbar-default .navbar-nav >.open > a:hover {
+    background: transparent;
+}
+
+.nav > li {
+    height: 100%;
+}
+
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid black;
+}
+
+.form-control-feedback {
+    cursor: pointer;
+}
+
+#wp-admin-bar-wp-logo {
+    display: none;
 }
