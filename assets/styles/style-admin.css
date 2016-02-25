@@ -3,7 +3,11 @@
 #wp-version-message,
 #dashboard_primary,
 .welcome-panel-content h2,
-.welcome-panel-content p
+.welcome-panel-content p,
+#contextual-help-link,
+#contextual-help-link-wrap,
+label[for="dashboard_primary-hide"],
+label[for="wp_welcome_panel-hide"]
 { 
 	display: none !important; 
 }
