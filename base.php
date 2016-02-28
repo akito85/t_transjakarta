@@ -20,9 +20,9 @@ use Roots\Sage\Wrapper;
     ?>
     <div id="wrapper" role="document">
       <div id="page-content-wrapper">
-        <div class="container-fluid xyz">
+        <main class="container-fluid xyz">
           <?php include Wrapper\template_path(); ?>
-        </div><!-- /.main -->
+        </main><!-- /.main -->
 
         <?php if (Setup\display_sidebar()) : ?>
           <aside class="sidebar">
