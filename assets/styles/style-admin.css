@@ -11,3 +11,19 @@ label[for="wp_welcome_panel-hide"]
 { 
 	display: none !important; 
 }
+
+label[for="siteurl"] {
+	font-size: 0;
+}
+label[for="siteurl"]:before {
+	content: "Real Address (URL):";
+	font-size: 14px;
+}
+
+#home-description {
+	font-size: 0;
+}
+#home-description:before {
+	content: "Enter the address here if you want your site home page to be different from your installation directory.";
+	font-size: 14px;	
+}
