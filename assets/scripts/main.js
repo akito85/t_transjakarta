@@ -10,10 +10,11 @@ $('input').focusout(function() {
     $('.has-feedback').removeClass("showClass");
 });
 
-$('#nav-burger').click(function(e) {
+$(document).on('click', '#nav-burger', function(e) {
     e.preventDefault();
-    $('#wrapper').toggleClass('toggled');
-});
+    $('#main-wrapper, .footer').toggleClass('toggled');
+    console.log('clicked!');    
+})
 
 function initMenu() {
     $('#menu ul').hide();

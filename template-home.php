@@ -3,8 +3,7 @@
  * Template Name: Home Template
  */
 ?>
-
-<div class="row">
+<div id="page-contents-home" class="container-fluid">
     <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, animation: 'swipe', duration: 500, autoplayInterval: 5000, pauseOnHover: false}">
         <?php
             // The Query
@@ -12,7 +11,7 @@
 
             // The Loop
             if ( $posts->have_posts() ) {
-                echo '<ul class="uk-slideshow" height="623px">';
+                echo '<ul class="uk-slideshow" height="633px">';
                 while ( $posts->have_posts() ) {
                     $posts->the_post();
                     // The Slideshow;
@@ -41,6 +40,3 @@
         </ul>
     </div>
 </div>
-
-<?php // get_template_part('templates/page', 'header'); ?>
-<?php get_template_part('templates/content', 'page'); ?>

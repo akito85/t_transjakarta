@@ -39,7 +39,12 @@
       "files": [
         "scripts/slideshow-fx.js"
       ]
-    },        
+    },
+    "magnify.js": {
+      "files": [
+        "scripts/magnify.js"
+      ]
+    },           
     "jquery.js": {
       "bower": ["jquery"]
     },

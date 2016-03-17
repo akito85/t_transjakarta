@@ -3,7 +3,7 @@
   <nav class="navbar yamm navbar-default navbar-fixed-top" role="navigation">
   <?php 
     // Fix menu overlap bug..
-    if ( is_admin_bar_showing() ) echo '<div style="min-height: 32px;"></div>'; 
+    if ( is_admin_bar_showing() ) echo '<div class="wpbarshow"></div>'; 
   ?>
     <div class="container-fluid">
       <a class="navbar-brand" href="<?= esc_url(home_url('/')); ?>">

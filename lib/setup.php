@@ -27,7 +27,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation' => __('Primary Navigation', 'sage')
+    'primary_navigation' => __('Primary Navigation', 'sage'),
+    'mobile_navigation' => __('Mobile Navigation', 'sage')
   ]);
 
   // Enable post thumbnails
@@ -109,6 +110,7 @@ function assets() {
   wp_enqueue_script('uikit/js', Assets\asset_path('scripts/uikit.js'), null, true); 
   wp_enqueue_script('uikit-slideshow/js', Assets\asset_path('scripts/slideshow.js'), null, true); 
   wp_enqueue_script('uikit-slideshow-fx/js', Assets\asset_path('scripts/slideshow-fx.js'), null, true);
+    wp_enqueue_script('magnify/js', Assets\asset_path('scripts/magnify.js'), null, true);
   wp_enqueue_script('noxus/js', Assets\asset_path('scripts/main.js'), null, true); 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

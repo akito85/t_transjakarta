@@ -88,3 +88,8 @@ function noxus_admin_stylesheet() {
     wp_enqueue_style( 'custom-admin', get_template_directory_uri() . '/dist/styles/style-admin.css' );
 }
 add_action('admin_enqueue_scripts', 'noxus_admin_stylesheet');
+
+function new_excerpt_more( $more ) {
+  return ' <br/><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Selanjutnya..') . '</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );

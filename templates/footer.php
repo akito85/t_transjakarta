@@ -1,4 +1,11 @@
-<footer class="footer">
+<?php  
+
+$title = get_the_title();
+
+$title == 'Beranda' ? $style = ' style="bottom:auto;"' : $style = ' style=""';
+$title = '';
+?>
+<footer class="footer" <?php echo $style; ?>>
     <div id="footer-top"></div>
 
     <div class="nav" id="nav-footer">

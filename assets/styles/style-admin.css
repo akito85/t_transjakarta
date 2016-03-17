@@ -7,7 +7,9 @@
 #contextual-help-link,
 #contextual-help-link-wrap,
 label[for="dashboard_primary-hide"],
-label[for="wp_welcome_panel-hide"]
+label[for="wp_welcome_panel-hide"],
+.welcome-learn-more,
+#wpadminbar li#wp-admin-bar-wp-logo
 { 
 	display: none !important; 
 }
